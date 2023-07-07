@@ -1,0 +1,69 @@
+/* html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body h1{
+    color: rgb(143, 114, 85);;
+    margin-top: 56px;
+} */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  color: rgb(143, 114, 85);
+}
+
+#map {
+  margin-top: 16px;
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 60%;
+  /* The width is the width of the web page */
+  
+}
+
+.card {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+#about-us{
+  background-color: #131211;
+}
+
+#about-us p{
+  color: white;
+}
+
+/* If the screen size is 1200px wide or more, set the font-size to 80px */
+/* @media (min-width: 992px) {
+  #about-us p{
+    font-size: x-large;
+  }
+} */
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+/* @media (min-width: 600px) {
+  #about-us p{
+    font-size: 2vw;
+  }
+} */
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+/* @media (max-width: 349.98px) {
+  #about-us p{
+    font-size: 3vw;
+  }
+} */
