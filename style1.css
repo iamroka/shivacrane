@@ -39,11 +39,15 @@ body {
   height: 100%;
   margin: 0;
 }
+
 /* 
 main {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
 } */
+.boundary-indicator {
+  background-color: red;
+}
 
 section {
   /* scroll-snap-align: start; */
@@ -87,20 +91,46 @@ h1 {
     grid-column: 1/3;
   } */
 }
-.about-us-content{
+
+.about-us-content {
   display: grid;
+  grid-template-columns: 3fr 2fr;
   grid-template-areas: "text-content image-grid";
   gap: 50px;
-  
+
 }
 
-.image-grid{
+.image-grid {
   display: grid;
-  grid-template-areas: 
-  "imge1 imge2"
-  "imge3 imge2";
-  gap: 0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "imge2 imge1"
+    "imge3 imge1";
+  gap: 10px;
 }
+
+.imge1 {
+  width: 100%;
+  background: red;
+  grid-area: imge1;
+  padding: 50px 0;
+  object-fit: cover;
+}
+
+.imge2 {
+  width: 100%;
+  background: green;
+  grid-area: imge2;
+  object-fit: cover;
+}
+
+.imge3 {
+  width: 100%;
+  background: blue;
+  grid-area: imge3;
+  object-fit: cover;
+}
+
 
 #services {
   min-height: 100%;
@@ -108,17 +138,29 @@ h1 {
 
 #clients {
   min-height: 100%;
-  display: block;
+  background-color: #bbb;
 }
 
 .clients-grid {
-  background-color: #fff;
   display: grid;
+  justify-items: center;
+  gap: 20px;
   /* grid-template-columns: auto auto auto auto; */
 
-  grid-template-columns: repeat(4, fit-content(120px));
-  gap: 50px;
-    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+}
+
+.clients-grid-item {
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  align-content: center;
 }
 
 #contact {
