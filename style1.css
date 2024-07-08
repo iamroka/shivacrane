@@ -1,0 +1,240 @@
+/* html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+body h1{
+    color: rgb(143, 114, 85);;
+    margin-top: 56px;
+} */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-paddaing, 50px);
+}
+
+.content-grid,
+.full-width {
+  display: grid;
+  grid-template-columns: [full-width-start] .5fr [breakout-start] .5fr [content-start] 10fr [content-end] .5fr [breakout-end] .5fr [full-width-end];
+}
+
+.content-grid>*,
+.full-width>* {
+  grid-column: content;
+}
+
+.content-grid>.breakout {
+  grid-column: breakout;
+}
+
+.content-grid>.full-width {
+  grid-column: full-width;
+}
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+/* 
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+} */
+
+section {
+  /* scroll-snap-align: start; */
+  height: 100vh;
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  color: rgb(143, 114, 85);
+}
+
+#map {
+  margin-top: 16px;
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 60%;
+  /* The width is the width of the web page */
+
+}
+
+.card {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+#about-us {
+  min-height: 100%;
+  /* grid-template-columns: "p p .image-grid"; */
+  /* p{
+    grid-column: 2/3;
+  }
+  .image-grid{
+    grid-column: 1/3;
+  } */
+}
+.about-us-content{
+  display: grid;
+  grid-template-areas: "text-content image-grid";
+  gap: 50px;
+  
+}
+
+.image-grid{
+  display: grid;
+  grid-template-areas: 
+  "imge1 imge2"
+  "imge3 imge2";
+  gap: 0;
+}
+
+#services {
+  min-height: 100%;
+}
+
+#clients {
+  min-height: 100%;
+  display: block;
+}
+
+.clients-grid {
+  background-color: #fff;
+  display: grid;
+  /* grid-template-columns: auto auto auto auto; */
+
+  grid-template-columns: repeat(4, fit-content(120px));
+  gap: 50px;
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+}
+
+#contact {
+  /* background-color: #131211; */
+  min-height: 100%;
+}
+
+/* If the screen size is 1200px wide or more, set the font-size to 80px */
+/* @media (min-width: 992px) {
+  #about-us p{
+    font-size: x-large;
+  }
+} */
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+/* @media (min-width: 600px) {
+  #about-us p{
+    font-size: 2vw;
+  }
+} */
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+/* @media (max-width: 349.98px) {
+  #about-us p{
+    font-size: 3vw;
+  }
+} */
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #cdcdcd;
+}
+
+.carousel-item .slide-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  top: 0;
+  left: 100%;
+}
+
+.carousel-item.active {
+  left: 0;
+  transition: inherit 0.6s ease;
+}
+
+.carousel-item div {
+  height: 100%;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.hero {
+  min-block-size: 100vh;
+  block-size: 100dvh;
+  place-content: center;
+  text-align: center;
+}
+
+.hero-text {
+  display: grid;
+  position: relative;
+  color: white;
+  align-items: center;
+  height: 100vh;
+  min-height: 100dvh;
+}
+
+.hero-button {
+  position: relative;
+  margin: auto;
+  /* align-self: center; */
+  justify-self: center;
+  /* display: inline-block; */
+  padding: 10px 20px;
+  font-size: .8em;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(128, 0, 0);
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  background-color: rgba(128, 0, 0, 0.849);
+}
+
+.overlay {
+  border-image: fill 1 linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.text-underline {
+  text-decoration-color: #C69337;
+  text-underline-offset: .5em;
+  text-decoration-thickness: 5px;
+}

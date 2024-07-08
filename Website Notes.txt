@@ -1,0 +1,8 @@
+Website Color Notes
+Crane Yellow
+#C69337 Celected Font
+rgb(143, 114, 85)
+
+Grey
+#131211 Dark Background
+#1c1c1c 
