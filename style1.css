@@ -41,7 +41,7 @@ main {
 section {
   /* scroll-snap-align: start; */
   min-height: calc(100vh - 50px);
-  border: red dashed 2px;
+  /* border: red dashed 2px; */
 }
 
 footer {
