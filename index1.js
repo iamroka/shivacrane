@@ -90,7 +90,7 @@ function scrollFunction() {
 
 
 function filterSelection(c) {
-  var x = document.getElementsByClassName("gallery-column");
+  var x = document.getElementsByClassName("gallery-item");
   if (c == "all") {
     c = "";
   }
