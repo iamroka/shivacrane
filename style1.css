@@ -105,7 +105,25 @@ h1 {
   position: relative;
 }
 
-.services-card{
+.services-cards{
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+}
+
+@media (min-width: 600px) {
+  .services-cards { grid-template-columns: repeat(2, .5fr); }
+}
+@media (min-width: 900px) {
+  .services-cards { grid-template-columns: repeat(3, .5fr); }
+}
+.services-card-item{
+  border: black solid 2px;
+  width: inherit;
+  padding: 1rem;
+  
 
 }
 
@@ -366,3 +384,4 @@ h1 {
   background-color: #666;
   color: white;
 }
+
