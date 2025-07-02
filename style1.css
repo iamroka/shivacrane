@@ -3,37 +3,35 @@ html {
   scroll-padding-top: var(--scroll-paddaing, 50px);
 }
 
-.content-grid,
-.full-width {
-  display: grid;
-  grid-template-columns: [full-width-start] .5fr [breakout-start] .5fr [content-start] 10fr [content-end] .5fr [breakout-end] .5fr [full-width-end];
-}
-
-.content-grid>*,
-.full-width>* {
-  grid-column: content;
-}
-
-.content-grid>.breakout {
-  grid-column: breakout;
-}
-
-.content-grid>.full-width {
-  grid-column: full-width;
-}
-
-
 html,
 body {
   height: 100%;
   margin: 0;
 }
 
+.content-grid,
+.full-width {
+  display: grid;
+  grid-template-columns: [full-width-start] .5fr [breakout-start] .5fr [content-start] 10fr [content-end] .5fr [breakout-end] .5fr [full-width-end];
+}
+
+.content-grid> :not(.breakout, .full-width),
+.full-width> :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid>.full-width {
+  grid-column: full-width;
 /* 
-main {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-} */
+  display: grid;
+  grid-template-columns: inherit; */
+}
+
+
 .boundary-indicator {
   background-color: red;
 }
@@ -55,24 +53,39 @@ footer {
   right: 20px;
   display: none;
 }
+
 #go-top {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: red;
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 15px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
 }
 
 #go-top:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #555;
+  /* Add a dark-grey background on hover */
 }
 
 
@@ -80,101 +93,17 @@ h1 {
   color: rgb(143, 114, 85);
 }
 
-#map {
-  margin-top: 16px;
-  height: 400px;
-  /* The height is 400 pixels */
-  width: 60%;
-  /* The width is the width of the web page */
 
-}
-
-.card {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+.text-underline {
+  text-decoration-color: #C69337;
+  text-underline-offset: .5em;
+  text-decoration-thickness: 5px;
 }
 
 
 
-#services {
-  /* min-height: 100%; */
-  position: relative;
-}
 
-.services-cards{
-  max-width: 100%;
-  margin: 0 auto;
-  display: grid;
-  gap: 2rem;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-}
 
-@media (min-width: 600px) {
-  .services-cards { grid-template-columns: repeat(2, .5fr); }
-}
-@media (min-width: 900px) {
-  .services-cards { grid-template-columns: repeat(3, .5fr); }
-}
-.services-card-item{
-  border: black solid 2px;
-  width: inherit;
-  padding: 1rem;
-  
-
-}
-
-#equipments{
-  max-width: fit-content;
-}
-
-.equipment-img-top{
-  height: auto;
-  width: 18rem;
-}
-
-#clients {
-  /* max-height: 100%; */
-  background-color: #e5e5e5;
-  padding-bottom: 1rem;
-}
-
-.clients-grid {
-  display: grid;
-  justify-items: center;
-  gap: .25rem;
-  grid-template-columns: repeat(2, minmax(100px, 1fr));
-  grid-auto-rows: 1fr
-}
-
-@media (min-width: 600px) {
-  .clients-grid { grid-template-columns: repeat(3, .5fr); }
-}
-@media (min-width: 900px) {
-  .clients-grid { grid-template-columns: repeat(4, .5fr); }
-}
-
-.clients-grid-item {
-  background-color: #ffffff;
-  width: 100%;
-  height: auto;
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-  align-content: center;
-  
-}
-
-.clients-grid-item-img{
-  max-width: 50%; height: auto;
-}
-#contact {
-  /* background-color: #131211; */
-  /* min-height: 100%; */
-}
 
 /* If the screen size is 1200px wide or more, set the font-size to 80px */
 /* @media (min-width: 992px) {
@@ -195,9 +124,10 @@ h1 {
   }
 } */
 
-.hero{
+.hero {
   height: 100svh;
 }
+
 .carousel {
   position: relative;
   width: 100%;
@@ -286,12 +216,6 @@ h1 {
 
 }
 
-.text-underline {
-  text-decoration-color: #C69337;
-  text-underline-offset: .5em;
-  text-decoration-thickness: 5px;
-}
-
 
 /* -------------------------About Us ------------------------*/
 #about-us {
@@ -301,13 +225,20 @@ h1 {
 }
 
 .about-us-content {
+
+  max-height: 100%;
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-areas: "text-content image-grid";
-  gap: 50px;
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+  grid-auto-flow: dense;
+  grid-template-areas:
+    "text-content about-img2 about-img1"
+    "text-content about-img3 about-img1";
+  gap: 8px;
 
 }
 
+/* 
 .image-grid {
   display: grid;
   grid-auto-rows: 1fr;
@@ -316,24 +247,23 @@ h1 {
     "imge2 imge1"
     "imge3 imge1";
   gap: .5rem;
-}
+} */
 
-.imge1 {
-  background: red;
-  grid-area: imge1;
+.about-img1 {
+  grid-area: about-img1;
   object-fit: cover;
 }
 
-.imge2 {
-  background: green;
-  grid-area: imge2;
+.about-img2 {
+  grid-area: about-img2;
   object-fit: cover;
+  height: .5fr;
 }
 
-.imge3 {
-  background: blue;
-  grid-area: imge3;
+.about-img3 {
+  grid-area: about-img3;
   object-fit: cover;
+  max-height: .5fr;
 }
 
 /* .about-us .contact-banner{
@@ -345,7 +275,160 @@ h1 {
 /* text-align: center; Optional: centers the text */
 /* } */
 
-/* Gallery Function related  */
+/* -------------------------Services ------------------------*/
+#services {
+  /* min-height: 100%; */
+  position: relative;
+}
+
+.services-cards {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+}
+
+@media (min-width: 600px) {
+  .services-cards {
+    grid-template-columns: repeat(2, .5fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .services-cards {
+    grid-template-columns: repeat(3, .5fr);
+  }
+}
+
+.services-card-item {
+  border: black solid 2px;
+  width: inherit;
+  padding: 1rem;
+
+
+}
+
+.services-card-item:hover {
+  border: #C69337 solid 2px;
+
+  .services-card-item-img {
+
+    /* background: #C69337; */
+    filter: invert(63%) sepia(37%) saturate(643%) hue-rotate(0deg) brightness(87%) contrast(104%);
+
+  }
+
+  .service-card-title {
+    color: #C69337;
+  }
+}
+
+/* -------------------------Equipments ------------------------*/
+#equipments {
+
+  max-width: 100%;
+}
+
+.equipment-cards {
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 600px) {
+  .equipment-cards {
+    grid-template-columns: repeat(2, .5fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .equipment-cards {
+    grid-template-columns: repeat(4, .5fr);
+  }
+}
+
+.equipment-card-item {
+  width: inherit;
+  padding: 1rem;
+
+
+}
+
+.equipment-img-top {
+  height: auto;
+  max-width: 100%;
+}
+
+
+
+/* -------------------------Why Us------------------------*/
+.why-us-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+#why-us-count {
+  background-color: #555;
+  /* flex-grow: 3; */
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+#why-us-quality {
+  background-color: bisque;
+  /* flex-grow: 7; */
+  height: 70%;
+  justify-items: center;
+}
+
+.why-us-cards {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+}
+
+@media (min-width: 600px) {
+  .why-us-cards {
+    grid-template-columns: repeat(2, .5fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .why-us-cards {
+    grid-template-columns: repeat(4, .5fr);
+  }
+}
+
+.why-us-card-item {
+  border: black solid 2px;
+  width: inherit;
+  padding: 1rem;
+
+
+}
+
+.why-us-card-item:hover {
+  border: #C69337 solid 2px;
+
+  .why-us-card-item-img {
+
+    /* background: #C69337; */
+    filter: invert(63%) sepia(37%) saturate(643%) hue-rotate(0deg) brightness(87%) contrast(104%);
+
+  }
+
+  .why-us-card-title {
+    color: #C69337;
+  }
+}
+
+/* -------------------------Our Works------------------------*/
 
 .gallery-grid {
   max-width: 100%;
@@ -356,21 +439,28 @@ h1 {
   grid-auto-rows: 1fr;
   /* gap: 2rem; */
   margin: 0px -0px;
-  }
-@media (min-width: 600px) {
-  .gallery-grid { grid-template-columns: repeat(2, .5fr); }
 }
+
+@media (min-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, .5fr);
+  }
+}
+
 @media (min-width: 900px) {
-  .gallery-grid { grid-template-columns: repeat(4, .5fr); }
+  .gallery-grid {
+    grid-template-columns: repeat(4, .5fr);
+  }
 }
 
 /* Create three equal columns that floats next to each other */
 .gallery-item {
   float: left;
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  display: none; /* Hide columns by default */
+  display: none;
+  /* Hide columns by default */
 }
 
 /* Clear floats after rows */
@@ -405,3 +495,69 @@ h1 {
   color: white;
 }
 
+/* -------------------------Clients ------------------------*/
+#clients {
+  /* max-height: 100%; */
+  background-color: #e5e5e5;
+  padding-bottom: 1rem;
+}
+
+.clients-grid {
+  display: grid;
+  justify-items: center;
+  gap: .25rem;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-auto-rows: 1fr
+}
+
+@media (min-width: 600px) {
+  .clients-grid {
+    grid-template-columns: repeat(3, .5fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .clients-grid {
+    grid-template-columns: repeat(4, .5fr);
+  }
+}
+
+.clients-grid-item {
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  align-content: center;
+
+}
+
+.clients-grid-item-img {
+  max-width: 50%;
+  height: auto;
+}
+
+/* -------------------------Contact Us ------------------------*/
+#contact {
+  /* background-color: #131211; */
+  /* min-height: 100%; */
+}
+
+#map {
+  margin-top: 16px;
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 60%;
+  /* The width is the width of the web page */
+
+}
+
+.card {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
