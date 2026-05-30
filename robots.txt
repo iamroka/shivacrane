@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block access to sensitive paths
+Disallow: /.htaccess
+Disallow: /.env
+Disallow: /*.log
+Disallow: /*.bak
+Disallow: /*.sql
+
+Sitemap: https://shivabreakdown.in/sitemap.xml
